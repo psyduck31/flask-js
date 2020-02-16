@@ -20,7 +20,7 @@ function printStudents(students, parameter, value) {
 			for (var j = 0; j < obj.length; j++) {
 				marks += obj[j];
 			}
-			marks / obj.length >= parseInt(value) ? console.log(rpad(students[i].name, 15), rpad(students[i].surname, 15), rpad(students[i].group, 8), rpad(students[i].marks, 20)) : null;
+			marks / obj.length >= parseFloat(value) ? console.log(rpad(students[i].name, 15), rpad(students[i].surname, 15), rpad(students[i].group, 8), rpad(students[i].marks, 20)) : null;
 		}
 		obj.includes(value) ? console.log(rpad(students[i].name, 15), rpad(students[i].surname, 15), rpad(students[i].group, 8), rpad(students[i].marks, 20)) : null;
 		}
