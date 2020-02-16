@@ -2,7 +2,7 @@ var groupmates = [{"name":"Александр","surname":"Иванов","group":
 
 
 function rpad(string, len) {
-	len = Number(len);
+	len = parseInt(len);
 	string = string.toString();
 	while (string.length < len) {
 		string += " "
@@ -14,17 +14,19 @@ function rpad(string, len) {
 function printStudents(students, parameter, value) {
 	console.log(rpad("Имя", 15),rpad("Фамилия", 15),rpad("Группа", 8),rpad("Оценки", 20))
 	for (var i = 0; i < students.length; i++) {
-		if (typeof(students[i][parameter]) == "object") {
-			var marks = 0;
-			for (var j = 0; j < students[i][parameter].length; j++) {
-				marks += students[i][parameter][j];
+		let obj = students[i][parameter];
+		if (typeof obj == "object") {
+			let marks = 0;
+			for (var j = 0; j < obj.length; j++) {
+				marks += obj[j];
 			}
-			marks / students[i][parameter].length >= Number(value) ? console.log(rpad(students[i].name, 15), rpad(students[i].surname, 15), rpad(students[i].group, 8), rpad(students[i].marks, 20)) : null;
+			marks / obj.length >= parseInt(value) ? console.log(rpad(students[i].name, 15), rpad(students[i].surname, 15), rpad(students[i].group, 8), rpad(students[i].marks, 20)) : null;
 		}
-		students[i][parameter].includes(value) ? console.log(rpad(students[i].name, 15), rpad(students[i].surname, 15), rpad(students[i].group, 8), rpad(students[i].marks, 20)) : null;
+		obj.includes(value) ? console.log(rpad(students[i].name, 15), rpad(students[i].surname, 15), rpad(students[i].group, 8), rpad(students[i].marks, 20)) : null;
 		}
 	alert("Результат выведен в консоль!")
 	}
+
 
 $(document).ready(() => {
 	$("#sortButton").on('click', () => {
