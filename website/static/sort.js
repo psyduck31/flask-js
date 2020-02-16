@@ -12,7 +12,7 @@ function rpad(string, len) {
 
 
 function printStudents(students, parameter, value) {
-	console.log(rpad("Имя", 15),rpad("Фамилия", 15),rpad("Группа", 8),rpad("Оценки", 20))
+	console.log(rpad("Имя", 15), rpad("Фамилия", 15), rpad("Группа", 8), rpad("Оценки", 20))
 	for (var i = 0; i < students.length; i++) {
 		let obj = students[i][parameter];
 		if (typeof obj == "object") {
