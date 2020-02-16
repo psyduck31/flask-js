@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<img id="parallax" src="./static/Mtuci_logo.png">
+<input id="sort" placeholder="Напишите что-нибудь сюда">
+<select id="sortSelect">
+	<option value="null" disabled selected="selected">Выберите по какому параметру надо сортировать</option>
+	<option value="group">Сортировка по группе</option>
+	<option value="marks">Сортировка по ср. оценке</option>
+</select>
+<button id="sortButton">Выполнить</button>
+<script type="text/javascript" src="{{url_for('static', filename='sort.js') }}"></script>
+{% endblock %}

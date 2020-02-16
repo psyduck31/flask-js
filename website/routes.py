@@ -20,6 +20,11 @@ def home():
     return render_template('home.html', all_rows=all_rows)
 
 
+@app.route('/sort')
+def sortPage():
+    return render_template('sort.html')
+
+
 @app.route('/post/<int:post_id>')
 def post(post_id):
     conn = sqlite3.connect('website/site.db')

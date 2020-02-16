@@ -1,8 +1,11 @@
 <body>
+<script type="text/javascript" src="{{url_for('static', filename='jquery-3.4.1.min.js') }}"></script>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark ml-auto">
-		<a class="navbar-brand" style="color: white" href="{{ url_for('home')}}">Записи</a>
+		<a class="navbar-brand" href="{{ url_for('home')}}">
+			<img src="{{ url_for('static', filename='Mtuci_logo.png')}}" width='30' height="30">
+		</a>
 		<ul class="navbar-nav ml-auto">
 			{% if current_user.is_authenticated %}
 				<a class="btn btn-primary" href="{{ url_for('add') }}" style="color: white; margin-right: 2%">Добавить</a>
@@ -15,4 +18,6 @@
 	</nav>
 {% block content %} {% endblock %}
 <script type="text/javascript" src="{{url_for('static', filename='fold-post.js') }}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='animation.js') }}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='parallax.js') }}"></script>
 </body>
