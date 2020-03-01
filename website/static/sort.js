@@ -40,6 +40,7 @@ function printStudents(students, parameter, value) {
 
 $(document).ready(() => {
 	$("#sortButton").on('click', () => {
+		//Если в списке параметров выбрано какое-то значение и если есть условие для вывода студента в консоль (ср. оценка или название группы), то запускает функцию printStudents(), иначе выводит сообщение об ошибке.
 		$('#sortSelect :selected')[0].value != "null" && $('#sort')[0].value.trim().length != 0 ? printStudents(groupmates, $('#sortSelect :selected')[0].value, $('#sort')[0].value.trim()) : alert("Возможно, вы забыли выбрать принцип сортировки или написать значение в поле для ввода.");
 	})
 })
