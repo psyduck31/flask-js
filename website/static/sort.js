@@ -26,6 +26,7 @@ function printStudents(students, parameter, value) {
 				marks += obj[j];
 			}
 			//Получаем ср. оценку
+			//Если сумма всех оценок делённая на длину массива оценок больше, чем средний балл, тогда вывести студента в консоль, если нет, то пропустить
 			marks / obj.length >= parseFloat(value) ? console.log(rpad(students[i].name, 15), rpad(students[i].surname, 15), rpad(students[i].group, 8), rpad(students[i].marks, 20)) : null;
 		}
 		//Эта 'функция' выполняется только если obj содержит value, то есть если parameter это название группы, а в значении value
